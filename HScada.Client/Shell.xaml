@@ -1,0 +1,25 @@
+﻿<Window x:Class="Client.Shell"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        BorderThickness="1.5"
+        BorderBrush="{DynamicResource 主题色5}"
+        ResizeMode="CanResize"
+        Closed="Window_Closed"
+        mc:Ignorable="d"
+        Title="H-SCADA" Height="600" Width="1200">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0" ResizeBorderThickness="1" GlassFrameThickness="0"  CornerRadius="0"   UseAeroCaptionButtons="True"   />
+    </WindowChrome.WindowChrome>
+    <Grid Margin="0" >
+        <AdornerDecorator>
+            <ContentControl   prism:RegionManager.RegionName="主布局"
+                          MouseLeftButtonDown="ContentControl_MouseLeftButtonDown"
+                          />
+        </AdornerDecorator>
+    </Grid>
+</Window>

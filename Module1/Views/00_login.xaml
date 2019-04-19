@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="Module1.Views._00_login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Module1;component/Resource/2.jpg" Stretch="UniformToFill" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <Border >
+            <Border Margin="5 0">
+                <Border.Effect>
+                    <BlurEffect/>
+                </Border.Effect>
+            </Border>
+        </Border>
+        <Grid Grid.Column="1"   >
+            <Grid Grid.Column="1"    >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Grid.Column="1"  >
+                    <StackPanel Orientation="Horizontal">
+                        <iconPacks:PackIconMaterial Height="24" Width="24" Kind="Account" FontSize="24" VerticalAlignment="Center" Foreground="{DynamicResource 主题色3}" />
+                        <TextBlock Text=": " FontSize="24" Foreground="{DynamicResource 主题色3}"/>
+                        <TextBox  Width="300" FontSize="24"  Margin="5"   Background="#60ffffff" CaretBrush="{DynamicResource 主题色5}"
+                          HorizontalContentAlignment="Stretch" Foreground="White"
+                         Controls:TextBoxHelper.IsWaitingForData="True"
+                         Controls:TextBoxHelper.UseFloatingWatermark="True"
+                         Controls:TextBoxHelper.Watermark="用户名"
+                                
+                         Controls:TextBoxHelper.WatermarkAlignment="Left"
+                         SpellCheck.IsEnabled="True" FontFamily="SimHei"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <iconPacks:PackIconFontAwesome Height="24" Width="24" Kind="UnlockSolid" VerticalAlignment="Center" Foreground="{DynamicResource 主题色3}"/>
+                        <TextBlock Text=": " FontSize="24" VerticalAlignment="Center" Foreground="{DynamicResource 主题色3}"/>
+                        <PasswordBox  Width="300" FontSize="24"  Margin="5" CaretBrush="{DynamicResource 主题色5}"   FontFamily="SimHei" Background="#60ffffff"
+                             Controls:TextBoxHelper.UseFloatingWatermark="True" PasswordChar="*"
+                             Controls:TextBoxHelper.Watermark="密码" Foreground="White" 
+                             Style="{StaticResource Win8MetroPasswordBox}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 0 5 0">
+                        <Button Content="　登录　" Margin="5 0" Command="{Binding LoginCommand}" />
+                        <Button Content="　忘记密码　"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
